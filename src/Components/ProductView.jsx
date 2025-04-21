@@ -96,7 +96,7 @@ function ProductCard(){
     
 
     let getProducts = async () => {
-        let response = await fetch (`http://127.0.0.1:8000/search/product/${slug}`)
+        let response = await fetch (`http://16.171.17.83/search/product/${slug}`)
         let data = await response.json()
         setProduct(data)
         console.log(data)

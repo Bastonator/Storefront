@@ -174,7 +174,7 @@ function CartPage() {
     
         const body = {order_email, phone, address}
 
-        const response = await axios.post("http://127.0.0.1:8000/search/order", body)
+        const response = await axios.post("http://16.171.17.83/search/order", body)
         console.log(response)
         console.log(response.data.id)
         const OrderID = (response.data.id)
@@ -213,7 +213,7 @@ function CartPage() {
 
             const body = {order, product, quantity, total_price}
 
-            const response = await axios.post("http://127.0.0.1:8000/search/order_items", body)
+            const response = await axios.post("http://16.171.17.83/search/order_items", body)
             console.log(response)
         }
     }    

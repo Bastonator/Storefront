@@ -21,7 +21,7 @@ function Search({setProduct, setProducts}) {
     }
 
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/search/search_results?search=${Search}`)
+        axios.get(`http://16.171.17.83/search/search_results?search=${Search}`)
 
         .then(res => {
             console.log(res.data)
