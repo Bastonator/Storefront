@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   server: {
     proxy: {
-      '/search': 'http://16.171.17.83',
+      '/search': 'http://51.20.76.251',
     }
   },
 

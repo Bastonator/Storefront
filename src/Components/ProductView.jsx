@@ -26,7 +26,13 @@ function ProductCard(){
         image5 : Pic
     })
 
-    const [activeImg, setActiveImg] = useState(image.image1)
+    const [activeImg, setActiveImg] = useState(product.image)
+
+    useEffect(() => {
+        if (product.image && product.image.length > 0) {
+            setActiveImg(product.image);
+        }
+    }, [product.image]);
 
     useEffect (() => {
         getProducts()
@@ -91,7 +97,7 @@ function ProductCard(){
     
 
     let getProducts = async () => {
-        let response = await fetch (`http://16.171.17.83/search/product/${slug}`)
+        let response = await fetch (`http://51.20.76.251/search/product/${slug}`)
         let data = await response.json()
         setProduct(data)
         console.log(data)
@@ -151,7 +157,7 @@ function ProductCard(){
                 <div>
                     <div className="sm:flex">
                             <div className="h-1/6">
-                                <img src={activeImg} width={800} className="h-4/6 aspect-square object-cover rounded-md"></img>
+                                <img src={activeImg} alt={product.image} width={800} className="h-4/6 aspect-square object-cover rounded-md"></img>
                             </div>
                         <div>
                             <h1 className="text-5xl font-medium uppercase mb-1 ml-2 mt-3">
@@ -193,10 +199,10 @@ function ProductCard(){
                         </div>
                     </div>
                     <div className="grid grid-cols-5 gap-4 mt-4 justify-between">
-                        <img src={image.image1} className="w-full h-full rounded-sm cursor-pointer border border-black" onClick={() => setActiveImg(image.image1)}></img>
-                        <img src={image.image2} className="w-full h-full rounded-sm cursor-pointer border border-black" onClick={() => setActiveImg(image.image2)}></img>
-                        <img src={image.image3} className="w-full h-full rounded-sm cursor-pointer border border-black" onClick={() => setActiveImg(image.image3)}></img>
-                        <img src={image.image4} className="w-full h-full rounded-sm cursor-pointer border border-black" onClick={() => setActiveImg(image.image4)}></img>
+                        <img src={product.image} className="w-full h-full rounded-sm cursor-pointer border border-black" onClick={() => setActiveImg(product.image)}></img>
+                        <img src={product.image_first} className="w-full h-full rounded-sm cursor-pointer border border-black" onClick={() => setActiveImg(product.image_first)}></img>
+                        <img src={product.image_second} className="w-full h-full rounded-sm cursor-pointer border border-black" onClick={() => setActiveImg(product.image_second)}></img>
+                        <img src={product.image_third} className="w-full h-full rounded-sm cursor-pointer border border-black" onClick={() => setActiveImg(product.image_third)}></img>
                         <img src={image.image5} className="w-full h-full rounded-sm cursor-pointer border border-black" onClick={() => setActiveImg(image.image5)}></img>
                     </div>
                 </div>
