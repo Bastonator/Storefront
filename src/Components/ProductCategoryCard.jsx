@@ -16,7 +16,7 @@ function CategorizedCard({products, categories}) {
     const getproducts = categoryfilterproducts.map(product =>
         <Link to={`/product/${product.slug}`} key={product.slug}>
             <div key={product.slug}>
-                        <img className="w-auto min-h-40" src={Pic} alt='Wriber'></img>
+                        <img className="w-auto min-h-40" src={product.image} alt={product.slug}></img>
                         <p>
                             {product.name}
                         </p>

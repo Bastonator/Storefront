@@ -33,7 +33,7 @@ function Card({searchprods}){
     const allProducts = searchedproducts.map(prod =>
         <div className="flex mt-5 " key={prod.slug}>
             <div className="" key={prod.slug}>
-                <img className="h-56 object-cover 2xl:w-64 w-64 sm:w-44 md:w-64 lg:w-64 " src={Pic} alt={prod.name}></img>
+                <img className="h-56 object-cover 2xl:w-64 w-64 sm:w-44 md:w-64 lg:w-64 " src={prod.image} alt={prod.name}></img>
             </div>
             <Link to={`/product/${prod.slug}`} key={prod.slug}>
             <div className="p-8">

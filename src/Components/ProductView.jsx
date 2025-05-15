@@ -2,12 +2,7 @@ import { useEffect, useState } from "react";
 //import axios from "axios";
 import { useParams } from "react-router-dom";
 import Pic from '/src/PHOTO-2024-04-09-09-43-08.jpg'
-import Pic2 from '/src/Web-Scrapings.jpg'
-import Pic3 from '/src/WhatsApp Image 2024-05-23 at 8.46.48 PM (1).jpeg'
-import Pic4 from '/src/WhatsApp Image 2024-05-23 at 8.46.49 PM.jpeg'
-import Pic5 from '/src/Wriber.ico'
 import { Link } from "react-router-dom";
-import Category from "./Category";
 
 
 function ProductCard(){ 
@@ -24,11 +19,11 @@ function ProductCard(){
 
     //4
     const [image, setImages] = useState({
-        image1 : Pic,
-        image2 : Pic2,
-        image3 : Pic3,
-        image4 : Pic4,
-        image5 : Pic5
+        image1 : product.image,
+        image2 : product.image_first,
+        image3 : product.image_second,
+        image4 : product.image_third,
+        image5 : Pic
     })
 
     const [activeImg, setActiveImg] = useState(image.image1)
